@@ -1,0 +1,5 @@
+/.ntvs_analysis.dat
+node_modules
+/.ntvs_analysis.dat.tmp
+.vscode
+*.code-workspace

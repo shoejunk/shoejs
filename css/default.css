@@ -1,0 +1,173 @@
+body
+{
+	cursor                : default;
+	font-size             : 50px;
+	background-repeat     : no-repeat;
+	background-attachment : fixed;
+	background-position   : center;
+	background-size       : cover;
+}
+
+.standardDarkColorScheme
+{
+	background-color : rgb(25, 17, 33);
+}
+
+.standardMediumColorScheme
+{
+	background-color : rgb(101, 68, 134);
+	color            : rgb(255, 255, 255);
+}
+
+.standardLightColor
+{
+	color : rgb(255, 244, 64);
+	fill  : rgb(255, 244, 64);
+}
+
+.whiteColor
+{
+	color : white;
+	fill  : white;
+}
+
+.hidden
+{
+	display : none;
+}
+
+.centered
+{
+	text-align: center;
+}
+
+.button
+{
+	cursor     : pointer;
+	width      : 400px;
+	text-align : center;
+}
+
+.smallButton
+{
+	cursor : pointer;
+	width  : 300px;
+}
+
+.screen
+{
+	position		: absolute;
+	width			: 4096px;
+	height			: 2760px;
+	margin-left		: -50%;
+}
+
+.buttonText
+{
+	position       : absolute;
+	color          : rgb(247, 228, 208);
+	text-align     : center;
+	font-size      : 83px;
+	pointer-events : none;
+	line-height    : 0.8;
+	font-family    : "Gingerbread";
+	font-weight    : lighter;
+}
+
+.popup
+{
+	position      : absolute;
+	left          : 40.0%;
+	top           : 40.0%;
+	width         : 20.0%;
+	height        : 20.0%;
+	border        : 8px solid black;
+	border-radius : 20px;
+	z-index       : 99;
+}
+
+.popupText
+{
+	display         : flex;
+	justify-content : center;
+	align-items     : center;
+	height          : 50%;
+	font-size       : 70px;
+	margin          : 10px;
+}
+
+.popupSingleButtonText
+{
+	width : 100%;
+	top   : 72%;
+}
+
+.smallButtonText
+{
+	font-family    : "Gingerbread";
+	font-weight    : lighter;
+	color          : #554029;
+	font-size      : 95px;
+	line-height    : 0.8;
+	pointer-events : none;
+}
+
+.verticallyHorizontallyCenteredText
+{
+	position        : absolute;
+	display         : flex;
+	justify-content : center;
+	align-items     : center;
+	top             : 0%;
+	height          : 73%;
+	width           : 80%;
+	margin          : 17% 10% 10% 10%;
+}
+
+.verticallyHorizontallyCenteredText2
+{
+	position        : absolute;
+	display         : flex;
+	justify-content : center;
+	align-items     : center;
+	top             : 0%;
+	height          : 73%;
+	width           : 80%;
+	margin          : 13% 10% 10% 10%;
+}
+
+.popupButtonLeft
+{
+	position : absolute;
+	left     : 5%;
+}
+
+.popupButtonRight
+{
+	position : absolute;
+	right    : 5%;
+}
+
+.popupButtonText
+{
+	font-family    : "Gingerbread";
+	font-weight    : lighter;
+	color          : white;
+	font-size      : 95px;
+	line-height    : 0.8;
+	pointer-events : none;
+	margin         : 13% 10% 10% 10%;
+}
+
+.purpleBackground
+{
+	background-color : rgb(46, 1, 56);
+}
+
+.footer
+{
+	position:fixed;
+	left:0px;
+	bottom:0px;
+	width:100%;
+}

@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<link href="../css/default.css" rel=stylesheet type="text/css">
+		<link href="../css/chat.css" rel=stylesheet type="text/css">
+	</head>
+	<body class="standardDarkColorScheme">
+		<div id="title" class="standardLightColor centered">
+			ShoeJS
+		</div>
+		<div id="versionStringContainer" class="standardLightColor centered footer">
+			<div id="versionString">version 0.0.1</div>
+		</div>
+
+		<input type="text" id="chatInput" name="chatInput" autofocus>
+		<div id="chatBox"></div>
+		<ee-GameObject data-head>
+			<ee-GameObject>
+				<eec-InputSender prop_g_input_box="chatInput" prop_g_sender="socket" prop_s_send_event="chatMessage"></eec-InputSender>
+				<eec-ChatMessageHandler prop_g_receiver="socket" prop_s_receive_event="chatMessage" prop_g_chat_box="chatBox"></eec-ChatMessageHandler>
+			</ee-GameObject>
+			<ee-GameObject id="socket">
+				<eec-ClientSocket data-serverAddress="localhost:80"></eec-ClientSocket>
+			</ee-GameObject>
+		</ee-GameObject>
+
+		<script src="../js/thirdParty/customElements/CustomElements.js"></script>
+		<script data-main="../js/clientMain" src="../js/thirdParty/requireJs/require.js"></script>
+	</body>
+</html>

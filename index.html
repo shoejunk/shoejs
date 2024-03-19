@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+	<ee-GameObject id="head" data-head>
+		<ee-GameObject id="commandLineArgs">
+			<eec-CommandLineArgLog></eec-CommandLineArgLog>
+		</ee-GameObject>
+		<ee-GameObject id="server">
+			<eec-StaticServer data-port="80">
+				<div><directory>www</directory></div>
+				<div><mount>/html</mount><directory>html</directory></div>
+				<div><mount>/js</mount><directory>www/js</directory></div>
+				<div><mount>/js</mount><directory>www/js/develop</directory></div>
+				<div><mount>/css</mount><directory>css</directory></div>
+				<div><mount>/img</mount><directory>img</directory></div>
+				<div><mount>/fonts</mount><directory>fonts</directory></div>
+				<div><mount>/audio</mount><directory>audio</directory></div>
+			</eec-StaticServer>
+			<eec-Http prop_b_ssl="false"></eec-Http>
+			<eec-RealtimeServer></eec-RealtimeServer>
+			<eec-ChatServer></eec-ChatServer>
+		</ee-GameObject>
+	</ee-GameObject>
+</body>
+</html>
+
