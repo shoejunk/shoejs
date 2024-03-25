@@ -35,14 +35,13 @@ requirejs([
 	'essentialEngine/animation/animation',
 	'essentialEngine/clientStopwatch/clientStopwatch',
 	'essentialEngine/animation/animHandler',
-	'essentialEngine/networking/chatMessageHandler',
+	'essentialEngine/networking/chatClient',
 	'essentialEngine/networking/userAccountsClient',
 	'essentialEngine/networking/accountCreationHelper',
 	'essentialEngine/networking/loginHelper',
 	'essentialEngine/networking/logoutHelper',
 	'essentialEngine/common/backgroundImage',
-	'essentialEngine/domControls/domControls',
-	'essentialEngine/common/inputSender'
+	'essentialEngine/domControls/domControls'
 ],
 function()
 {

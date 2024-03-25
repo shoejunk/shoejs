@@ -16,8 +16,13 @@
 		<div id="chatBox"></div>
 		<ee-GameObject data-head>
 			<ee-GameObject>
-				<eec-InputSender prop_g_input_box="chatInput" prop_g_sender="socket" prop_s_send_event="chatMessage"></eec-InputSender>
-				<eec-ChatMessageHandler prop_g_receiver="socket" prop_s_receive_event="chatMessage" prop_g_chat_box="chatBox"></eec-ChatMessageHandler>
+				<eec-ChatClient
+					prop_g_input_box="chatInput"
+					prop_g_socket="socket"
+					prop_s_send_event="chatMessage"
+					prop_s_receive_event="chatMessage"
+					prop_g_chat_box="chatBox">
+				</eec-ChatClient>
 			</ee-GameObject>
 			<ee-GameObject id="socket">
 				<eec-ClientSocket data-serverAddress="localhost:80"></eec-ClientSocket>
