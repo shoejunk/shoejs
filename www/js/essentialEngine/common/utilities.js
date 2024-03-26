@@ -86,10 +86,10 @@ define(['jquery'], function($)
 		assert(typeof mExp === 'boolean');
 	}
 
-	function assertGameObject(mExp)
+	function assertEntity(mExp)
 	{
 		assertObject(mExp);
-		assert(mExp.nodeName === 'EE-GAMEOBJECT', 'variable not GameObject');
+		assert(mExp.nodeName === 'SH-ENTITY', 'variable not Entity');
 	}
 
 	// Pick a random int from iMinInt to iMaxInt, inclusive [iMinInt, iMaxInt]
@@ -715,7 +715,7 @@ define(['jquery'], function($)
 
 	function shrinkTextToFit(sText, sFontWeight, sFontFamily, iFontSize, iDesiredWidth)
 	{
-		while(getTextWidth(sText, `${sFontWeight} ${iFontSize}pt ${sFontFamily}`) > iDesiredWidth && iFontSize > 0)
+		while(getTextWidth(sText, `${sFontWeight} ${iFontSize}px ${sFontFamily}`) > iDesiredWidth && iFontSize > 0)
 		{
 			--iFontSize;
 		}
@@ -799,50 +799,50 @@ define(['jquery'], function($)
 		return oDiv.firstChild;
 	}
 
-	function onInitGameObjectPromise(gGameObject)
+	function onInitEntityPromise(eEntity)
 	{
 		return new Promise((resolve, reject) =>
 		{
 			function onLoad()
 			{
-				UTIL.assertFunction(gGameObject.onInit);
-				gGameObject.onInit(resolve);
+				UTIL.assertFunction(eEntity.onInit);
+				eEntity.onInit(resolve);
 			}
 
-			// Wait for the game object to load:
-			if(gGameObject.onLoad)
+			// Wait for the entity to load:
+			if(eEntity.onLoad)
 			{
-				gGameObject.onLoad(onLoad);
+				eEntity.onLoad(onLoad);
 			}
-			else if(gGameObject.m_aOnLoads)
+			else if(eEntity.m_aOnLoads)
 			{
-				gGameObject.m_aOnLoads.push(onLoad);
+				eEntity.m_aOnLoads.push(onLoad);
 			}
 			else
 			{
-				gGameObject.m_aOnLoads = [onLoad];
+				eEntity.m_aOnLoads = [onLoad];
 			}
 		});
 	}
 
-	async function loadGameObjectFromTemplate(sHtmlPath, oParent, sSelector, jTemplateArgs)
+	async function loadEntityFromTemplate(sHtmlPath, oParent, sSelector, jTemplateArgs)
 	{
 		await loadHtmlFromTemplate(sHtmlPath, oParent, jTemplateArgs);
-		let gGameObject = $(oParent).find(sSelector)[0];
-		UTIL.assertGameObject(gGameObject);
-		await onInitGameObjectPromise(gGameObject);
-		assertGameObject(gGameObject);
-		return gGameObject;
+		let eEntity = $(oParent).find(sSelector)[0];
+		UTIL.assertEntity(eEntity);
+		await onInitEntityPromise(eEntity);
+		assertEntity(eEntity);
+		return eEntity;
 	}
 
-	async function getGameObjectWithCache(sHtmlPath, oParent, sSelector, jTemplateArgs)
+	async function getEntityWithCache(sHtmlPath, oParent, sSelector, jTemplateArgs)
 	{
-		let aGameObject = $(oParent).find(sSelector);
-		if(aGameObject && aGameObject.length > 0)
+		let aEntity = $(oParent).find(sSelector);
+		if(aEntity && aEntity.length > 0)
 		{
-			return aGameObject[0];
+			return aEntity[0];
 		}
-		return loadGameObjectFromTemplate(sHtmlPath, oParent, sSelector, jTemplateArgs);
+		return loadEntityFromTemplate(sHtmlPath, oParent, sSelector, jTemplateArgs);
 	}
 
 	function getElementsFromAttributes(oDiv, ...aAttributes)
@@ -890,7 +890,7 @@ define(['jquery'], function($)
 		return false;
 	}
 
-	function isGameObject(mExp)
+	function isEntity(mExp)
 	{
 		// Is an object?
 		if(!isObject(mExp))
@@ -898,13 +898,13 @@ define(['jquery'], function($)
 			return false;
 		}
 
-		// Is a game object?
-		if(mExp.nodeName === 'EE-GAMEOBJECT')
+		// Is an entity?
+		if(mExp.nodeName === 'SH-ENTITY')
 		{
 			return true;
 		}
 
-		// Is an object, but not a game object:
+		// Is an object, but not an entity:
 		return false;
 	}
 
@@ -1004,7 +1004,7 @@ define(['jquery'], function($)
 		assertExists              : assertExists,
 		assertFloat               : assertFloat,
 		assertFunction            : assertFunction,
-		assertGameObject          : assertGameObject,
+		assertEntity              : assertEntity,
 		assertInt                 : assertInt,
 		assertObject              : assertObject,
 		assertString              : assertString,
@@ -1061,13 +1061,13 @@ define(['jquery'], function($)
 		loadHtmlPromise           : loadHtmlPromise,
 		loadHtmlFromTemplate      : loadHtmlFromTemplate,
 		getElementsFromAttributes : getElementsFromAttributes,
-		onInitGameObjectPromise   : onInitGameObjectPromise,
-		loadGameObjectFromTemplate: loadGameObjectFromTemplate,
-		getGameObjectWithCache    : getGameObjectWithCache,
+		onInitEntityPromise       : onInitEntityPromise,
+		loadEntityFromTemplate    : loadEntityFromTemplate,
+		getEntityWithCache        : getEntityWithCache,
 		generateUniqueId          : generateUniqueId,
 		getArrayDepth             : getArrayDepth,
 		isObject                  : isObject,
-		isGameObject              : isGameObject,
+		isEntity                  : isEntity,
 		zeroPad                   : zeroPad,
 		formatSeconds             : formatSeconds,
 		nearbySpaceAndTime        : nearbySpaceAndTime,

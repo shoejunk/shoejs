@@ -22,7 +22,7 @@ requirejs(['text'], function(text)
 			'essentialEngine/common/utilities',
 			'essentialEngine/common/commandLineArgLog',
 			'essentialEngine/common/numberPool',
-			'essentialEngine/component/gameObject',
+			'essentialEngine/component/entity',
 			'essentialEngine/component/component',
 			'essentialEngine/server/chatServer',
 			'essentialEngine/server/networkRoom',

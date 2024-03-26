@@ -14,8 +14,8 @@
 
 		<input type="text" id="chatInput" name="chatInput" autofocus>
 		<div id="chatBox"></div>
-		<ee-GameObject data-head>
-			<ee-GameObject>
+		<sh-entity data-head>
+			<sh-entityntity>
 				<eec-ChatClient
 					prop_g_input_box="chatInput"
 					prop_g_socket="socket"
@@ -23,11 +23,11 @@
 					prop_s_receive_event="chatMessage"
 					prop_g_chat_box="chatBox">
 				</eec-ChatClient>
-			</ee-GameObject>
-			<ee-GameObject id="socket">
+			</sh-entity>
+			<sh-entity id="socket">
 				<eec-ClientSocket data-serverAddress="localhost:80"></eec-ClientSocket>
-			</ee-GameObject>
-		</ee-GameObject>
+			</sh-entity>
+		</sh-entity>
 
 		<script src="../js/thirdParty/customElements/CustomElements.js"></script>
 		<script data-main="../js/clientMain" src="../js/thirdParty/requireJs/require.js"></script>

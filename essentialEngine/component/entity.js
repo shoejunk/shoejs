@@ -7,8 +7,8 @@ define(['jquery',
 	'essentialEngine/common/checklist'],
 	function($, UTIL, EVENTS, DependencyTreeNode, Checklist)
 {
-	var GameObjectPrototype = Object.create(HTMLElement.prototype);
-	GameObjectPrototype.createdCallback = function createdCallback()
+	var EntityPrototype = Object.create(HTMLElement.prototype);
+	EntityPrototype.createdCallback = function createdCallback()
 	{
 		// Private variables:
 		var m_jComponents = {};
@@ -243,10 +243,10 @@ define(['jquery',
 		this.init();
 	};
 
-	var GameObject = document.registerElement('ee-GameObject',
+	var Entity = document.registerElement('sh-entity',
 	{
-		prototype	: GameObjectPrototype
+		prototype	: EntityPrototype
 	});
 
-	return GameObject;
+	return Entity;
 });

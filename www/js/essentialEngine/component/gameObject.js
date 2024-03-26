@@ -243,7 +243,7 @@ define(['jquery',
 		this.init();
 	};
 
-	var GameObject = document.registerElement('ee-GameObject',
+	var GameObject = document.registerElement('Entity',
 	{
 		prototype	: GameObjectPrototype
 	});

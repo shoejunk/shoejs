@@ -1,11 +1,11 @@
 ﻿<!DOCTYPE html>
 <html>
 <body>
-	<ee-GameObject id="head" data-head>
-		<ee-GameObject id="commandLineArgs">
+	<sh-entity id="head" data-head>
+		<sh-entity id="commandLineArgs">
 			<eec-CommandLineArgLog></eec-CommandLineArgLog>
-		</ee-GameObject>
-		<ee-GameObject id="server">
+		</sh-entity>
+		<sh-entity id="server">
 			<eec-StaticServer data-port="80">
 				<div><directory>www</directory></div>
 				<div><mount>/html</mount><directory>html</directory></div>
@@ -19,8 +19,8 @@
 			<eec-Http prop_b_ssl="false"></eec-Http>
 			<eec-RealtimeServer></eec-RealtimeServer>
 			<eec-ChatServer></eec-ChatServer>
-		</ee-GameObject>
-	</ee-GameObject>
+		</sh-entity>
+	</sh-entity>
 </body>
 </html>
 
