@@ -19,7 +19,7 @@ requirejs.config(
 });
 
 requirejs([
-	'essentialEngine/component/gameObject',
+	'essentialEngine/component/entity',
 	'essentialEngine/htmlInclude/htmlInclude',
 	'essentialEngine/component/component',
 	'essentialEngine/common/utilities',
