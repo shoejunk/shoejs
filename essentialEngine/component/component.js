@@ -56,29 +56,29 @@ define(['jquery', 'essentialEngine/common/utilities', 'essentialEngine/common/de
 				let sAttr = m_oThis.getAttribute(sAttribute);
 				switch(sPropType)
 				{
-					// Game Object
-					case 'g':
-						let gGameObject = $('#' + sAttr)[0];
-						if(!gGameObject)
+					// Entity
+					case 'e':
+						let eEntity = $('#' + sAttr)[0];
+						if(!eEntity)
 						{
 							if(m_oThis.parentNode)
 							{
-								gGameObject = $(m_oThis.parentNode).find('.' + sAttr)[0];
-								if(!gGameObject && m_oThis.parentNode.parentNode)
+								eEntity = $(m_oThis.parentNode).find('.' + sAttr)[0];
+								if(!eEntity && m_oThis.parentNode.parentNode)
 								{
-									gGameObject = $(m_oThis.parentNode.parentNode).find('.' + sAttr)[0];
-									if(!gGameObject && m_oThis.parentNode.parentNode.parentNode)
+									eEntity = $(m_oThis.parentNode.parentNode).find('.' + sAttr)[0];
+									if(!eEntity && m_oThis.parentNode.parentNode.parentNode)
 									{
-										gGameObject = $(m_oThis.parentNode.parentNode.parentNode).find('.' + sAttr)[0];
+										eEntity = $(m_oThis.parentNode.parentNode.parentNode).find('.' + sAttr)[0];
 									}
 								}
 							}
-							if(!gGameObject)
+							if(!eEntity)
 							{
-								gGameObject = $('.' + sAttr)[0];
+								eEntity = $('.' + sAttr)[0];
 							}
 						}
-						m_oThis[sSetter](gGameObject);
+						m_oThis[sSetter](eEntity);
 						break;
 					// int
 					case 'i':
