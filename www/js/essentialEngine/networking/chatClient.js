@@ -71,7 +71,9 @@ define(
 
 		onChatMessage(sMessage)
 		{
-			$(this[m_eChatBox]).append(`<div class="chatMessage">${sMessage}</div>`);
+			let eChatBox = $(this[m_eChatBox]);
+			eChatBox.append(`<div class="chatMessage">${sMessage}</div>`);
+			eChatBox.scrollTop(eChatBox[0].scrollHeight);
 		}
 
 		setSocket(eSocket)
